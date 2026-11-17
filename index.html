@@ -1,1 +1,47 @@
-index.html
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14213D">
+  <title>Calculadora de Ganancias para Emprendedores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Calculadora de Ganancias</h1>
+      <p>Para emprendedores · valores en pesos colombianos</p>
+    </header>
+
+    <section class="card inputs" aria-label="Datos del producto">
+      <label for="costo">Costo del producto
+        <span class="field"><b>$</b><input id="costo" type="text" inputmode="numeric" autocomplete="off" placeholder="0"><i>COP</i></span>
+      </label>
+      <label for="precio">Precio de venta
+        <span class="field"><b>$</b><input id="precio" type="text" inputmode="numeric" autocomplete="off" placeholder="0"><i>COP</i></span>
+      </label>
+      <button id="limpiar" type="button">Limpiar</button>
+    </section>
+
+    <section class="card result" id="resultado" data-estado="vacio" aria-live="polite">
+      <p class="estado" id="estado">Ingresa costo y precio para ver tu ganancia</p>
+      <p class="monto" id="ganancia">$ 0</p>
+      <p class="sub">Ganancia por unidad</p>
+
+      <div class="meter" aria-hidden="true"><div id="barra"></div></div>
+
+      <dl>
+        <div><dt>Rentabilidad</dt><dd id="rentabilidad">0 %</dd></div>
+        <div><dt>Margen sobre venta</dt><dd id="margen">0 %</dd></div>
+      </dl>
+      <p class="nota">Rentabilidad = ganancia ÷ costo. Margen = ganancia ÷ precio de venta.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
