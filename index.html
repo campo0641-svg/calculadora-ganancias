@@ -43,7 +43,20 @@ b<!DOCTYPE html>
       <p class="nota">Rentabilidad = ganancia ÷ costo. Margen = ganancia ÷ precio de venta.</p>
     </section>
   </main>
-  <script src="app.js"></script>
+  
+
+<script src="app.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('Aplicación lista'))
+        .catch((error) => console.error('Error:', error));
+    });
+  }
+</script>
+
 </body>
 </html>
 
